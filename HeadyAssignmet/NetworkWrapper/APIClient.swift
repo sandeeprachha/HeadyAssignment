@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import RealmSwift
 
 enum HTTPMETHOD : String {
@@ -41,18 +40,20 @@ class APIClient
             do {
                 let categories = try JSONDecoder().decode(T.self, from: data!)
                 print(categories)
-                DispatchQueue.main.async {
-                    do {
-                        try RealmStorage.sharedInstance.realm.write {
-                            RealmStorage.sharedInstance.realm.deleteAll()
-                            RealmStorage.sharedInstance.realm.add(categories as! Object)
-                        }
-                        completionHandler(.success(categories))
-                    } catch let error {
-                        print(error)
-                        completionHandler(.failure(error))
-                    }
-                }
+//                DispatchQueue.main.async {
+//                    do {
+//                        try RealmStorage.sharedInstance.realm.write {
+//                            RealmStorage.sharedInstance.realm.deleteAll()
+//                            RealmStorage.sharedInstance.realm.add(categories as! Object)
+//                        }
+//                        completionHandler(.success(categories))
+//                    } catch let error {
+//                        print(error)
+//                        completionHandler(.failure(error))
+//                    }
+//                }
+                completionHandler(.success(categories))
+
             } catch let finalError {
                 completionHandler(.failure(finalError))
             }

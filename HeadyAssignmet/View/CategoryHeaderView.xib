@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="CategoryHeaderView" customModule="HeadyAssignmet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAE-sq-d54">
+                    <rect key="frame" x="0.0" y="68" width="356" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="keh-r3-LvN"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efj-PM-Vai">
+                    <rect key="frame" x="0.0" y="1" width="356" height="69"/>
+                    <connections>
+                        <action selector="expandAction:" destination="-1" eventType="touchUpInside" id="pHo-mT-0qC"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbJ-3s-Sz0">
+                    <rect key="frame" x="15" y="25" width="286" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yom-Ry-vyB">
+                    <rect key="frame" x="316" y="24" width="30" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="N3j-10-cdd"/>
+                    </constraints>
+                    <state key="normal" image="chevron.right.circle.fill" catalog="system"/>
+                    <state key="selected" image="chevron.down.circle.fill" catalog="system"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="efj-PM-Vai" secondAttribute="trailing" id="4Qp-dS-J2O"/>
+                <constraint firstItem="cbJ-3s-Sz0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Adc-L6-Y6Q"/>
+                <constraint firstItem="yom-Ry-vyB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CDC-FK-6tI"/>
+                <constraint firstItem="efj-PM-Vai" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FcR-Sj-aus"/>
+                <constraint firstItem="NAE-sq-d54" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gao-z7-zWQ"/>
+                <constraint firstItem="efj-PM-Vai" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="HQv-4P-u5L"/>
+                <constraint firstAttribute="bottom" secondItem="efj-PM-Vai" secondAttribute="bottom" id="T0y-lF-sdv"/>
+                <constraint firstAttribute="bottom" secondItem="NAE-sq-d54" secondAttribute="bottom" constant="1" id="df8-Fu-Jog"/>
+                <constraint firstAttribute="trailing" secondItem="NAE-sq-d54" secondAttribute="trailing" id="diy-1l-xTl"/>
+                <constraint firstItem="yom-Ry-vyB" firstAttribute="leading" secondItem="cbJ-3s-Sz0" secondAttribute="trailing" constant="15" id="oAh-5R-DDK"/>
+                <constraint firstItem="cbJ-3s-Sz0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="rLm-Nf-axT"/>
+                <constraint firstAttribute="trailing" secondItem="yom-Ry-vyB" secondAttribute="trailing" constant="10" id="yVT-8H-vQb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="chevronBtn" destination="yom-Ry-vyB" id="uc0-sV-3zd"/>
+                <outlet property="nameLbl" destination="cbJ-3s-Sz0" id="ZeH-yV-pdd"/>
+            </connections>
+            <point key="canvasLocation" x="98.550724637681171" y="-182.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.down.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="chevron.right.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

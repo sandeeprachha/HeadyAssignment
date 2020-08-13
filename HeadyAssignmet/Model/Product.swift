@@ -15,7 +15,7 @@ import Realm
      dynamic var name:String!
      dynamic var dateAdded = Date()
     let variants = List<Variant>()
-     dynamic var value: Tax!
+     dynamic var tax: Tax!
     
     override static func primaryKey() -> String? {
         return "id"
@@ -26,6 +26,7 @@ import Realm
         case name
         case dateAdded = "date_added"
         case variants
+        case tax
     }
     required init(from decoder: Decoder) throws
     {
@@ -35,6 +36,7 @@ import Realm
         name = try container.decode(String.self, forKey: .name)
         let vari = try container.decode([Variant].self, forKey: .variants)
         variants.append(objectsIn: vari)
+        tax = try container.decode(Tax.self, forKey: .tax)
 
         super.init()
     }
