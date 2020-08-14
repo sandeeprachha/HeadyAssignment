@@ -63,12 +63,24 @@ class ViewController: UIViewController {
             }
         }
     }
+    @IBAction func popularAction(_ sender: Any) {
+        
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as? CategoryDetailTVC
-        guard let cell = sender as? UITableViewCell else { return  }
-        let indexPath = tableView.indexPath(for: cell)
-        vc?.category = categoryRank?.mainCategories[indexPath!.section].subCategories[indexPath!.row]
+        if segue.identifier == "categoryProductsSegue" {
+            let vc = segue.destination as? CategoryDetailTVC
+            guard let cell = sender as? UITableViewCell else { return  }
+            let indexPath = tableView.indexPath(for: cell)
+            vc?.category = categoryRank?.mainCategories[indexPath!.section].subCategories[indexPath!.row]
+        } else {
+            guard categoryRank != nil else {
+                return
+            }
+            let vc = segue.destination as? ProductTVC
+            vc?.rankings = categoryRank?.rankings
+        }
     }
     
     
@@ -128,5 +140,14 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         return 75.0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let category = categoryRank?.mainCategories[indexPath.section].subCategories[indexPath.row]
+//        guard category?.childCategories.count == 0 else {
+//          selectedSection = categoryRank?.mainCategories.firstIndex(of: category!)
+//            return
+//        }
+          
+//        self.performSegue(withIdentifier: "showProductSegue", sender: self)
+    }
     
 }

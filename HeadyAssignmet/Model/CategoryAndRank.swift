@@ -42,6 +42,18 @@ struct CategoryAndRank: Decodable {
     let rankings:[Rank]
 
     var mainCategories:[Category] {
-        return categories.filter { $0.childCategories.count > 0}
+        let cat = categories.filter { $0.childCategories.count > 0}
+        let fitered = cat
+        var finalCategory = [Category]()
+        for category in cat {
+            for cat in fitered {
+                if category.childCategories.contains(cat.id) {
+                    if !finalCategory.contains(category){
+                        finalCategory.append(category)
+                    }
+                }
+            }
+        }
+        return finalCategory
     }
 }

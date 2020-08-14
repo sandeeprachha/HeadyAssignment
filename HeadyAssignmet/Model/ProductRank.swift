@@ -8,8 +8,19 @@
 
 import UIKit
 import RealmSwift
+import ObjectMapper
+@objcMembers class ProductRank: Object, Decodable, Mappable {
+    
+    required convenience init?(map: Map) {
+        self.init()
 
-@objcMembers class ProductRank: Object, Decodable {
+    }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        count <- map["count"]
+    }
+    
      dynamic var id = 0
      dynamic var count = 0
 

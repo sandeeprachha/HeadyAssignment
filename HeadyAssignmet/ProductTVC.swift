@@ -1,16 +1,16 @@
 //
-//  CategoryDetailTVC.swift
+//  ProductTVC.swift
 //  HeadyAssignmet
 //
-//  Created by Sandeep on 8/13/20.
+//  Created by Sandeep on 8/14/20.
 //  Copyright © 2020 Sandeep. All rights reserved.
 //
 
 import UIKit
-import RealmSwift
 
-class CategoryDetailTVC: UITableViewController {
-    @IBOutlet weak var headerView: UIScrollView!
+class ProductTVC: UITableViewController {
+
+    var rankings:[Rank]!
     @IBOutlet weak var stackView: UIStackView!
 
 
@@ -20,13 +20,18 @@ class CategoryDetailTVC: UITableViewController {
         }
     }
     var selectedButton:UIButton!
-    var category:Category!
-    
-    var selectedCategory:Category? {
+    var rank:Rank? {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    var selectedProduct:Product? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,55 +41,50 @@ class CategoryDetailTVC: UITableViewController {
         tableView.rowHeight = 150.0
         tableView.tableFooterView = UIView()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        for  category in category.subCategories {
+        for  (i,rank) in rankings.enumerated() {
             let button = UIButton(type: .custom)
-            button.setTitle("\(String(describing: category.name!))", for: .normal)
-            
+            button.setTitle("\(String(describing: rank.rankType))", for: .normal)
             button.backgroundColor = .lightGray
             button.setTitleColor(.white, for: .normal)
-            button.tag = category.id
-            button.addTarget(self, action:#selector(CategoryDetailTVC.onSubCategoryClickAction), for: .touchUpInside)
+            button.tag = i + 1
+            button.addTarget(self, action:#selector(ProductTVC.onRankTypeClickAction), for: .touchUpInside)
             stackView.addArrangedSubview(button)
         }
     }
     
-    @objc func onSubCategoryClickAction(sender:UIButton) {
-        
-        let cat = category.subCategories.first(where: {$0.id == sender.tag})
-        if  selectedCategory == nil{
-            selectedButton = sender
+    @objc func onRankTypeClickAction(sender:UIButton) {
+           
+        let rank = rankings[sender.tag - 1]
+        if  self.rank == nil{
+               selectedButton = sender
 
-        } else {
-            selectedButton.isSelected = false
-            selectedButton.backgroundColor = .lightGray
-            selectedButton = sender
-            selectedSection = nil
-        }
-        selectedButton.isSelected = true
-        selectedButton.backgroundColor = .systemGreen
-        selectedCategory = cat
-    }
+           } else {
+               selectedButton.isSelected = false
+               selectedButton.backgroundColor = .lightGray
+               selectedButton = sender
+               selectedSection = nil
+           }
+           selectedButton.isSelected = true
+           selectedButton.backgroundColor = .systemGreen
+        self.rank = rank
+       }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return (selectedCategory == nil) ? 0 : (selectedCategory?.products.count)!
+        return rank?.prodcts.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (selectedSection == nil) ? 0 : (selectedSection == section ? 1 : 0)
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:CategoryCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        let product = selectedCategory?.products[indexPath.section]
-        cell.product = product
-        //cell.nameLbl.text = product.name
+        cell.product = rank?.prodcts[indexPath.section]
 
         return cell
     }
@@ -92,8 +92,7 @@ class CategoryDetailTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView:CategoryHeaderView? = tableView.dequeueReusableHeaderFooterView()
-        let product = selectedCategory?.products[section]
-        headerView?.nameLbl.text = (product?.name)! + " (\(product?.variants.count ?? 0))"
+        headerView?.nameLbl.text = (rank?.prodcts[section].name)! + " (\(rank?.products[section].count ?? 0))"
         headerView?.section = section
         let bv = (UIView.init())
         bv.frame = headerView?.bounds ?? .zero
@@ -121,6 +120,8 @@ class CategoryDetailTVC: UITableViewController {
     {
         return 75.0
     }
+
+    
 
     /*
     // Override to support conditional editing of the table view.

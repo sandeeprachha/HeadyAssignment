@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C541F7A24E71D5000419424 /* ProductTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C541F7924E71D5000419424 /* ProductTVC.swift */; };
 		2C59F6B224E457F2001D5946 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59F6B124E457F2001D5946 /* RealmStorage.swift */; };
 		2C59F6B424E4630C001D5946 /* CategoryAndRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59F6B324E4630C001D5946 /* CategoryAndRank.swift */; };
 		2C59F6B724E47CD8001D5946 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59F6B624E47CD8001D5946 /* APIClient.swift */; };
@@ -18,6 +19,7 @@
 		2C59F6C424E5C43D001D5946 /* CategoryDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59F6C324E5C43D001D5946 /* CategoryDetailTVC.swift */; };
 		2C59F6C724E5C943001D5946 /* VariantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59F6C524E5C943001D5946 /* VariantCell.swift */; };
 		2C59F6C824E5C943001D5946 /* VariantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C59F6C624E5C943001D5946 /* VariantCell.xib */; };
+		2C59F6CA24E6DD24001D5946 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C59F6C924E6DD22001D5946 /* CustomSegmentedControl.swift */; };
 		2CA68B7F24E4126900FD1895 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA68B7E24E4126900FD1895 /* AppDelegate.swift */; };
 		2CA68B8124E4126900FD1895 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA68B8024E4126900FD1895 /* SceneDelegate.swift */; };
 		2CA68B8324E4126900FD1895 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA68B8224E4126900FD1895 /* ViewController.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C541F7924E71D5000419424 /* ProductTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTVC.swift; sourceTree = "<group>"; };
 		2C59F6B124E457F2001D5946 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		2C59F6B324E4630C001D5946 /* CategoryAndRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAndRank.swift; sourceTree = "<group>"; };
 		2C59F6B624E47CD8001D5946 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		2C59F6C324E5C43D001D5946 /* CategoryDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailTVC.swift; sourceTree = "<group>"; };
 		2C59F6C524E5C943001D5946 /* VariantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantCell.swift; sourceTree = "<group>"; };
 		2C59F6C624E5C943001D5946 /* VariantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VariantCell.xib; sourceTree = "<group>"; };
+		2C59F6C924E6DD22001D5946 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2CA68B7B24E4126900FD1895 /* HeadyAssignmet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyAssignmet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA68B7E24E4126900FD1895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA68B8024E4126900FD1895 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		2C59F6B824E5AB53001D5946 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C59F6C924E6DD22001D5946 /* CustomSegmentedControl.swift */,
 				2C59F6C524E5C943001D5946 /* VariantCell.swift */,
 				2C59F6C624E5C943001D5946 /* VariantCell.xib */,
 				2C59F6B924E5AB87001D5946 /* CategoryCell.swift */,
@@ -176,6 +181,7 @@
 				2CA68B8024E4126900FD1895 /* SceneDelegate.swift */,
 				2CA68B8224E4126900FD1895 /* ViewController.swift */,
 				2C59F6C324E5C43D001D5946 /* CategoryDetailTVC.swift */,
+				2C541F7924E71D5000419424 /* ProductTVC.swift */,
 				2CA68B8424E4126900FD1895 /* Main.storyboard */,
 				2CA68B8724E4126B00FD1895 /* Assets.xcassets */,
 				2CA68B8924E4126B00FD1895 /* LaunchScreen.storyboard */,
@@ -410,11 +416,13 @@
 				2C59F6BB24E5AB87001D5946 /* CategoryCell.swift in Sources */,
 				2CA68B8324E4126900FD1895 /* ViewController.swift in Sources */,
 				2CA68BB824E41BD400FD1895 /* Tax.swift in Sources */,
+				2C59F6CA24E6DD24001D5946 /* CustomSegmentedControl.swift in Sources */,
 				2CA68BB224E415E300FD1895 /* Category.swift in Sources */,
 				2CA68BB024E414B500FD1895 /* Product.swift in Sources */,
 				2CA68BB624E41A3700FD1895 /* Varient.swift in Sources */,
 				2CA68BB424E4167400FD1895 /* ProductRank.swift in Sources */,
 				2C59F6BE24E5ABB2001D5946 /* CategoryHeaderView.swift in Sources */,
+				2C541F7A24E71D5000419424 /* ProductTVC.swift in Sources */,
 				2CA68BBA24E41F5900FD1895 /* Rank.swift in Sources */,
 				2C59F6C224E5AF74001D5946 /* Reusable.swift in Sources */,
 				2C59F6B224E457F2001D5946 /* RealmStorage.swift in Sources */,

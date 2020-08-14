@@ -50,7 +50,7 @@ extension CategoryCell:UICollectionViewDelegate, UICollectionViewDataSource {
         let variant =  product?.variants[indexPath.row]
         cell.varientView.backgroundColor = .red
         cell.varientView.layer.cornerRadius = 25.0
-        let size = (variant?.size.value == nil) ? "N/A" : "\(variant?.size.value!)"
+        let size = (variant?.size.value == nil) ? "N/A" : "\(variant?.size.value! ?? 0)"
         cell.sizeLbl.text = "Size: \(size)"
         cell.priceLbl.text = "Price: \(variant?.price ?? 0.0)"
         return cell

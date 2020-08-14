@@ -1,4 +1,5 @@
 PODS:
+  - ObjectMapper (3.5.3)
   - Realm (5.3.3):
     - Realm/Headers (= 5.3.3)
   - Realm/Headers (5.3.3)
@@ -6,17 +7,20 @@ PODS:
     - Realm (= 5.3.3)
 
 DEPENDENCIES:
+  - ObjectMapper (~> 3.5)
   - RealmSwift
 
 SPEC REPOS:
   trunk:
+    - ObjectMapper
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
 
-PODFILE CHECKSUM: f60c442771eb9af322b26d009c0346739ced386c
+PODFILE CHECKSUM: 69f29b3298635ccc2103867e73cdb95c4a957fb7
 
 COCOAPODS: 1.9.3

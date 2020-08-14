@@ -6,4 +6,5 @@ target 'HeadyAssignmet' do
   use_frameworks!
 
   pod 'RealmSwift'
+  pod 'ObjectMapper', '~> 3.5'
 end
