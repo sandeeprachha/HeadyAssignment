@@ -7,4 +7,6 @@ target 'HeadyAssignmet' do
 
   pod 'RealmSwift'
   pod 'ObjectMapper', '~> 3.5'
+  pod 'ProgressHUD'
+  pod 'SwiftyPickerPopover'
 end

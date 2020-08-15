@@ -30,6 +30,8 @@ import RealmSwift
     }
     required init(from decoder: Decoder) throws
     {
+        super.init()
+
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         id = try container.decode(Int.self, forKey: .id)
@@ -39,7 +41,6 @@ import RealmSwift
         let chi = try container.decode([Int].self, forKey: .childCategories)
         childCategories.append(objectsIn: chi)
 
-        super.init()
     }
     
     required init() {

@@ -34,26 +34,13 @@ class APIClient
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             guard error == nil else {
-                print(error?.localizedDescription as Any)
+                completionHandler(.failure(error!))
                 return
             }
             do {
                 let categories = try JSONDecoder().decode(T.self, from: data!)
                 print(categories)
-//                DispatchQueue.main.async {
-//                    do {
-//                        try RealmStorage.sharedInstance.realm.write {
-//                            RealmStorage.sharedInstance.realm.deleteAll()
-//                            RealmStorage.sharedInstance.realm.add(categories as! Object)
-//                        }
-//                        completionHandler(.success(categories))
-//                    } catch let error {
-//                        print(error)
-//                        completionHandler(.failure(error))
-//                    }
-//                }
                 completionHandler(.success(categories))
-
             } catch let finalError {
                 completionHandler(.failure(finalError))
             }

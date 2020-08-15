@@ -20,10 +20,11 @@ import RealmSwift
     
        required init(from decoder: Decoder) throws
        {
+        super.init()
+
           let container = try decoder.container(keyedBy: CodingKeys.self)
           name = try container.decode(String.self, forKey: .name)
           value = try container.decode(Double.self, forKey: .value)
-         super.init()
        }
        
        required init() {

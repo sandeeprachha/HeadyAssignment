@@ -60,7 +60,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nyb-51-5Sz">
-                        <barButtonItem key="rightBarButtonItem" title="Popular" id="icF-Yd-lNV">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Popular" id="icF-Yd-lNV">
                             <connections>
                                 <action selector="popularAction:" destination="BYZ-38-t0r" id="UbE-E8-yLm"/>
                                 <segue destination="kk0-uv-GRe" kind="show" id="Iaj-5T-TTO"/>
@@ -69,6 +69,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="popularButton" destination="icF-Yd-lNV" id="A9n-BN-5Zf"/>
                         <outlet property="tableView" destination="9ef-5H-V2S" id="Sb5-JN-IFL"/>
                     </connections>
                 </viewController>
@@ -84,7 +85,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="mBX-MR-4eY">
+                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="mBX-MR-4eY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -156,7 +157,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" id="aHA-bb-kkA">
+                        <scrollView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="aHA-bb-kkA">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -192,7 +193,9 @@
                             <outlet property="delegate" destination="kk0-uv-GRe" id="CnP-5C-XWm"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="AaD-Sc-gf2"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="stackView" destination="8qi-zH-LYy" id="KAy-Qq-6JK"/>
                     </connections>

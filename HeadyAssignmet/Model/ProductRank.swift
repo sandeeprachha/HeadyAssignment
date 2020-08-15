@@ -32,6 +32,8 @@ import ObjectMapper
     }
     required init(from decoder: Decoder) throws
     {
+        super.init()
+
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         if let viewCount = try container.decodeIfPresent(Int.self, forKey: .viewCount) {
@@ -44,7 +46,6 @@ import ObjectMapper
             count = shares
         }
 
-        super.init()
     }
     
     required init() {

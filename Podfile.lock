@@ -1,26 +1,34 @@
 PODS:
   - ObjectMapper (3.5.3)
+  - ProgressHUD (2.70)
   - Realm (5.3.3):
     - Realm/Headers (= 5.3.3)
   - Realm/Headers (5.3.3)
   - RealmSwift (5.3.3):
     - Realm (= 5.3.3)
+  - SwiftyPickerPopover (6.6.6)
 
 DEPENDENCIES:
   - ObjectMapper (~> 3.5)
+  - ProgressHUD
   - RealmSwift
+  - SwiftyPickerPopover
 
 SPEC REPOS:
   trunk:
     - ObjectMapper
+    - ProgressHUD
     - Realm
     - RealmSwift
+    - SwiftyPickerPopover
 
 SPEC CHECKSUMS:
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  ProgressHUD: e603e8b8622c47d8818b9fb38b3cfe9d3e7ca421
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
+  SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
 
-PODFILE CHECKSUM: 69f29b3298635ccc2103867e73cdb95c4a957fb7
+PODFILE CHECKSUM: 52610ae0e3f5115ba4db6cbc2ccf92e72d97f350
 
 COCOAPODS: 1.9.3

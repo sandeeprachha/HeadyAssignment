@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 import Realm
 
+
+
 @objcMembers class Product: Object, Decodable {
      dynamic var id = 0
      dynamic var name:String!
@@ -30,6 +32,8 @@ import Realm
     }
     required init(from decoder: Decoder) throws
     {
+        super.init()
+
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         id = try container.decode(Int.self, forKey: .id)
@@ -38,7 +42,6 @@ import Realm
         variants.append(objectsIn: vari)
         tax = try container.decode(Tax.self, forKey: .tax)
 
-        super.init()
     }
     
     required init() {

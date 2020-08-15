@@ -46,12 +46,13 @@ enum RankType: String {
     
        required init(from decoder: Decoder) throws
        {
+        super.init()
+
           let container = try decoder.container(keyedBy: CodingKeys.self)
           rankType = try container.decode(String.self, forKey: .ranking)
           let prods = try container.decode([ProductRank].self, forKey: .products)
         products.removeAll()
           products.append(objectsIn: prods)
-         super.init()
 
        }
        
@@ -62,10 +63,7 @@ enum RankType: String {
 
 extension Rank {
     public var prodcts: [Product] {
-        var productIds = [Int]()
-        for product in products {
-            productIds.append(product.id)
-        }
-        return RealmStorage.sharedInstance.realm.objects(Product.self).filter("id IN %@", productIds).map{$0}
+        let productctsArr = Array(products)
+        return RealmStorage.sharedInstance.realm.objects(Product.self).filter("id IN %@", productctsArr.map{$0.id}).map{$0}
     }
 }

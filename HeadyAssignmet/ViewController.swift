@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import ProgressHUD
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +26,9 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var popularButton: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,6 +43,7 @@ class ViewController: UIViewController {
     }
     
     func fetchCategories() {
+        ProgressHUD.show("Loading...")
         APIClient.sharedInstance.performAPIRequest(Contants.Url.categories, methodType: .GET, parameters: nil) { (response:Result<CategoryAndRank, Error>) in
             switch response {
             case .success (let value):
@@ -50,14 +56,19 @@ class ViewController: UIViewController {
                             realm.add(value.rankings)
                         }
                         self.categoryRank = value
+                        self.popularButton.isEnabled = true
                     } catch let error {
                         print(error)
+                        self.showError(error: error)
                     }
+                    ProgressHUD.dismiss()
                 }
                 break
             case .failure (let error):
                 DispatchQueue.main.async {
                     print(error)
+                    ProgressHUD.dismiss()
+                    self.showError(error: error)
                 }
                 break
             }
@@ -67,6 +78,12 @@ class ViewController: UIViewController {
         
     }
     
+    func showError(error:Error) {
+        let okAction = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+        let alert = UIAlertController.init(title: "Error!", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "categoryProductsSegue" {

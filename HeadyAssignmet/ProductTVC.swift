@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyPickerPopover
 
 class ProductTVC: UITableViewController {
 
@@ -20,7 +21,7 @@ class ProductTVC: UITableViewController {
         }
     }
     var selectedButton:UIButton!
-    var rank:Rank? {
+    var rank: Rank? {
         didSet {
             tableView.reloadData()
         }
@@ -96,8 +97,8 @@ class ProductTVC: UITableViewController {
         headerView?.section = section
         let bv = (UIView.init())
         bv.frame = headerView?.bounds ?? .zero
-        bv.backgroundColor = .white
-        headerView?.backgroundView = bv
+        headerView?.contentView.backgroundColor = .white
+        //bv.backgroundColor = .white
          headerView?.chevronBtn.isSelected = (headerView?.section == selectedSection)
         headerView?.expandHandler = { section in
             if self.selectedSection == nil {
