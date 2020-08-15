@@ -36,13 +36,10 @@ import RealmSwift
         super.init()
 
            let container = try decoder.container(keyedBy: CodingKeys.self)
-           
            id = try container.decode(Int.self, forKey: .id)
            color = try container.decode(String.self, forKey: .color)
            size.value = try container.decodeIfPresent(Int.self, forKey: .size)
            price = try container.decode(Double.self, forKey: .price)
-
-
        }
     
     var variantColor:UIColor {

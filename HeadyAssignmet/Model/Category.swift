@@ -40,7 +40,6 @@ import RealmSwift
         products.append(objectsIn: pros)
         let chi = try container.decode([Int].self, forKey: .childCategories)
         childCategories.append(objectsIn: chi)
-
     }
     
     required init() {

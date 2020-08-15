@@ -39,7 +39,6 @@ class APIClient
             }
             do {
                 let categories = try JSONDecoder().decode(T.self, from: data!)
-                print(categories)
                 completionHandler(.success(categories))
             } catch let finalError {
                 completionHandler(.failure(finalError))

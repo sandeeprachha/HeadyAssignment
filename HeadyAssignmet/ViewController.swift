@@ -99,9 +99,6 @@ class ViewController: UIViewController {
             vc?.rankings = categoryRank?.rankings
         }
     }
-    
-    
-    
 }
 
 extension ViewController:UITableViewDelegate, UITableViewDataSource {

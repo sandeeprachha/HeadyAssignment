@@ -41,12 +41,10 @@ import Realm
         let vari = try container.decode([Variant].self, forKey: .variants)
         variants.append(objectsIn: vari)
         tax = try container.decode(Tax.self, forKey: .tax)
-
     }
     
     required init() {
         super.init()
-
     }
     
     
